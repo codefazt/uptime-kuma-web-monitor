@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="min-h-screen flex flex-col items-center py-10 px-4">
+        <div class="max-w-3xl w-full bg-white/80 rounded-2xl shadow-lg p-8 mb-10">
+            <h1 class="text-4xl font-extrabold text-center text-blue-900 mb-6">Rick and Morty App</h1>
+            <p class="text-lg text-gray-800 text-justify">
+                ¡Bienvenido! Esta aplicación te permite explorar el universo de <span class="font-bold text-green-700">Rick and Morty</span>, la serie animada que combina ciencia ficción, humor negro y aventuras interdimensionales. Sigue a Rick, un científico excéntrico, y a su nieto Morty, mientras viajan por mundos extraños, enfrentan criaturas bizarras y desafían las leyes del tiempo y el espacio. Descubre los personajes más icónicos y revive los episodios más memorables de la serie que ha conquistado a millones de fans en todo el mundo.
+            </p>
+        </div>
+        <div class="flex flex-col gap-8 w-full max-w-3xl mx-auto">
+            <!-- Rick Sanchez -->
+            <div class="bg-white/80 rounded-xl shadow-md p-6 w-full flex flex-col">
+                <div class="text-2xl font-bold text-green-700 mb-4">Rick Sanchez</div>
+                <div class="flex flex-col md:flex-row w-full items-center">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez" class="rounded-xl w-24 h-24 object-cover border-4 border-green-500 md:mr-6 mb-4 md:mb-0">
+                    <p class="text-gray-700 text-justify md:text-left text-base md:ml-6">El genio científico, alcohólico y sarcástico, protagonista principal de la serie. Sus inventos y su desprecio por las reglas lo llevan a vivir aventuras interdimensionales junto a su familia.</p>
+                </div>
+            </div>
+            <!-- Morty Smith -->
+            <div class="bg-white/80 rounded-xl shadow-md p-6 w-full flex flex-col">
+                <div class="text-2xl font-bold text-green-700 mb-4">Morty Smith</div>
+                <div class="flex flex-col md:flex-row-reverse w-full items-center">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="Morty Smith" class="rounded-xl w-24 h-24 object-cover border-4 border-green-500 md:ml-6 mb-4 md:mb-0">
+                    <p class="text-gray-700 text-justify md:text-right text-base md:mr-6">Nieto de Rick, es un adolescente inseguro y bondadoso que acompaña a su abuelo en sus peligrosos viajes, enfrentando dilemas morales y situaciones absurdas.</p>
+                </div>
+            </div>
+            <!-- Summer Smith -->
+            <div class="bg-white/80 rounded-xl shadow-md p-6 w-full flex flex-col">
+                <div class="text-2xl font-bold text-green-700 mb-4">Summer Smith</div>
+                <div class="flex flex-col md:flex-row w-full items-center">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/3.jpeg" alt="Summer Smith" class="rounded-xl w-24 h-24 object-cover border-4 border-green-500 md:mr-6 mb-4 md:mb-0">
+                    <p class="text-gray-700 text-justify md:text-left text-base md:ml-6">Hermana mayor de Morty, inteligente y decidida, a menudo se une a las aventuras familiares y demuestra ser más capaz de lo que aparenta.</p>
+                </div>
+            </div>
+            <!-- Beth Smith -->
+            <div class="bg-white/80 rounded-xl shadow-md p-6 w-full flex flex-col">
+                <div class="text-2xl font-bold text-green-700 mb-4">Beth Smith</div>
+                <div class="flex flex-col md:flex-row-reverse w-full items-center">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/4.jpeg" alt="Beth Smith" class="rounded-xl w-24 h-24 object-cover border-4 border-green-500 md:ml-6 mb-4 md:mb-0">
+                    <p class="text-gray-700 text-justify md:text-right text-base md:mr-6">Madre de Morty y Summer, hija de Rick. Veterinaria de caballos, busca constantemente la aprobación de su padre y enfrenta sus propios conflictos personales.</p>
+                </div>
+            </div>
+            <!-- Jerry Smith -->
+            <div class="bg-white/80 rounded-xl shadow-md p-6 w-full flex flex-col">
+                <div class="text-2xl font-bold text-green-700 mb-4">Jerry Smith</div>
+                <div class="flex flex-col md:flex-row w-full items-center">
+                    <img src="https://rickandmortyapi.com/api/character/avatar/5.jpeg" alt="Jerry Smith" class="rounded-xl w-24 h-24 object-cover border-4 border-green-500 md:mr-6 mb-4 md:mb-0">
+                    <p class="text-gray-700 text-justify md:text-left text-base md:ml-6">Padre de la familia, inseguro y torpe, suele ser el blanco de las bromas y el caos generado por Rick, aunque ocasionalmente muestra momentos de valentía.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

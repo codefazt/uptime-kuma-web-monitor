@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block extra_styles %}
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+{% block content %}
+    <div class="min-h-screen py-10 px-4">
+        <h1 class="text-3xl font-extrabold text-center text-white mb-8">Episodios de Rick y Morty</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for episodio in episodios %}
+            <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center">
+                <span class="font-bold text-lg text-green-700 mb-2">{{ episodio.name }}</span>
+                <span class="text-gray-700">{{ episodio.episode }}</span>
+                <span class="text-gray-500">{{ episodio.air_date }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="pagination text-center mt-10">
+            <form method="get" class="inline">
+                <button type="submit" name="page" value="{{ page - 1 }}" {% if page <= 1 %}disabled{% endif %} class="bg-green-600 text-white px-4 py-2 rounded-lg mr-2 disabled:bg-gray-400">Anterior</button>
+            </form>
+            <span class="text-white font-semibold">Página {{ page }} de {{ total_pages }}</span>
+            <form method="get" class="inline">
+                <button type="submit" name="page" value="{{ page + 1 }}" {% if page >= total_pages %}disabled{% endif %} class="bg-green-600 text-white px-4 py-2 rounded-lg ml-2 disabled:bg-gray-400">Siguiente</button>
+            </form>
+        </div>
+    </div>
+    <div class="pagination">
+        <form method="get" style="display:inline;">
+            <button type="submit" name="page" value="{{ page - 1 }}" {% if page <= 1 %}disabled{% endif %}>Anterior</button>
+        </form>
+        <span>Página {{ page }} de {{ total_pages }}</span>
+        <form method="get" style="display:inline;">
+            <button type="submit" name="page" value="{{ page + 1 }}" {% if page >= total_pages %}disabled{% endif %}>Siguiente</button>
+        </form>
+    </div>
+{% endblock %}

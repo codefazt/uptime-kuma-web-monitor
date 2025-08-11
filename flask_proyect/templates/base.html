@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick y Morty Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .navbar { background: #4caf50; padding: 16px 0; text-align: center; }
+        .navbar a { color: #fff; text-decoration: none; margin: 0 18px; font-size: 1.2em; font-weight: bold; padding: 8px 18px; border-radius: 8px; transition: background 0.2s; }
+        .navbar a:hover, .navbar .active { background: #388e3c; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    </style>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/plain-smooth-green-wall-texture.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+    {% block extra_styles %}{% endblock %}
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" class="{% if active=='inicio' %}active{% endif %}">Inicio</a>
+        <a href="/personajes" class="{% if active=='personajes' %}active{% endif %}">Personajes</a>
+        <a href="/episodios" class="{% if active=='episodios' %}active{% endif %}">Episodios</a>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
