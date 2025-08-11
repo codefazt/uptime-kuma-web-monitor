@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="min-h-screen flex flex-col items-center py-10 px-4">
+    <div class="max-w-3xl w-full bg-white/80 rounded-2xl shadow-lg p-8 mb-10">
+        <h2 class="text-3xl font-bold text-green-700 mb-6">Informe de novedades</h2>
+        <form method="post" action="{{ url_for('toggle_job') }}" class="mb-6">
+            <button type="submit" class="px-6 py-2 rounded-lg font-bold text-white {{ 'bg-green-600 hover:bg-green-700' if job_enabled else 'bg-red-600 hover:bg-red-700' }}">
+                {{ 'Desactivar' if job_enabled else 'Activar' }} monitoreo
+            </button>
+        </form>
+        {% if logs %}
+            <ul class="list-group mb-3">
+                {% for log in logs %}
+                    <li class="list-group-item bg-white/90 rounded-md shadow p-2 mb-2 text-gray-800">{{ log }}</li>
+                {% endfor %}
+            </ul>
+            <nav aria-label="Paginación">
+                <ul class="pagination flex gap-2 justify-center">
+                    {% if has_prev %}
+                        <li class="page-item"><a class="page-link px-4 py-2 rounded bg-green-100 hover:bg-green-200" href="?page={{ page - 1 }}">Anterior</a></li>
+                    {% endif %}
+                    <li class="page-item disabled"><span class="page-link px-4 py-2 rounded bg-gray-100">Página {{ page }}</span></li>
+                    {% if has_next %}
+                        <li class="page-item"><a class="page-link px-4 py-2 rounded bg-green-100 hover:bg-green-200" href="?page={{ page + 1 }}">Siguiente</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% else %}
+            <div class="alert alert-info bg-yellow-100 text-yellow-800 rounded-lg p-4 text-center">No hay novedades</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

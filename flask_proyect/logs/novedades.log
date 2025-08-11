@@ -1,0 +1,38 @@
+[2025-08-11 17:38:12] Se encontraron 20 nuevos personajes: Rick Sanchez, Morty Smith, Summer Smith, Beth Smith, Jerry Smith, Abadango Cluster Princess, Abradolf Lincler, Adjudicator Rick, Agency Director, Alan Rails, Albert Einstein, Alexander, Alien Googah, Alien Morty, Alien Rick, Amish Cyborg, Annie, Antenna Morty, Antenna Rick, Ants in my Eyes Johnson
+[2025-08-11 17:38:12] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/1a28hvqc5g?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c4b81d486e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:39:12] No hay novedades
+[2025-08-11 17:39:12] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/1a28hvqc5g?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c4b81d902d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:40:12] No hay novedades
+[2025-08-11 17:40:12] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/1a28hvqc5g?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c4b81d91310>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:41:12] No hay novedades
+[2025-08-11 17:41:12] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/1a28hvqc5g?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c4b81d79cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:42:12] No hay novedades
+[2025-08-11 17:42:12] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/1a28hvqc5g?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7c4b81d7a9e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:44:17] No hay novedades
+[2025-08-11 17:44:17] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/Y9UM7SAGUc?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7d0a2a9cc980>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:45:17] No hay novedades
+[2025-08-11 17:45:17] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/Y9UM7SAGUc?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7d0a2a9e1310>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:46:17] No hay novedades
+[2025-08-11 17:46:17] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/Y9UM7SAGUc?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7d0a2a9e0910>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:47:17] No hay novedades
+[2025-08-11 17:47:17] Error: HTTPConnectionPool(host='localhost', port=3001): Max retries exceeded with url: /api/push/Y9UM7SAGUc?status=up&msg=OK&ping= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7d0a2a9d9a70>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-08-11 17:49:30] No hay novedades
+[2025-08-11 17:50:30] No hay novedades
+[2025-08-11 17:51:30] No hay novedades
+[2025-08-11 17:52:30] No hay novedades
+[2025-08-11 17:54:40] No hay novedades
+[2025-08-11 17:55:40] No hay novedades
+[2025-08-11 17:56:40] No hay novedades
+[2025-08-11 18:00:39] No hay novedades
+[2025-08-11 18:01:40] No hay novedades
+[2025-08-11 18:02:40] No hay novedades
+[2025-08-11 18:07:39] No hay novedades
+[2025-08-11 18:08:40] No hay novedades
+[2025-08-11 18:09:40] No hay novedades
+[2025-08-11 18:10:40] No hay novedades
+[2025-08-11 18:11:40] No hay novedades
+[2025-08-11 18:12:40] No hay novedades
+[2025-08-11 18:13:40] No hay novedades
+[2025-08-11 18:14:40] No hay novedades
+[2025-08-11 18:15:40] No hay novedades
+[2025-08-11 18:16:40] No hay novedades

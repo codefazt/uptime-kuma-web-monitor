@@ -25,6 +25,7 @@
         <a href="/" class="{% if active=='inicio' %}active{% endif %}">Inicio</a>
         <a href="/personajes" class="{% if active=='personajes' %}active{% endif %}">Personajes</a>
         <a href="/episodios" class="{% if active=='episodios' %}active{% endif %}">Episodios</a>
+        <a href="{{ url_for('novedades') }}" class="{% if active=='novedades' %}active{% endif %}">Informe de novedades</a>
     </div>
     <div class="container">
         {% block content %}{% endblock %}
