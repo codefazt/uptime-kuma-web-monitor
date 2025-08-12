@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Iniciar Sesión</h2>
+    <form method="post">
+        <label>Usuario:</label><input type="text" name="usuario" required><br>
+        <label>Contraseña:</label><input type="password" name="passwd" required><br>
+        <input type="submit" value="Entrar">
+    </form>
+    <a href="{{ url_for('auth_routes.register') }}">¿No tienes cuenta? Regístrate</a>
+</body>
+</html>

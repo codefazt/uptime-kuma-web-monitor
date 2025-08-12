@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestión de Tokens</title>
+</head>
+<body>
+    <h2>Tokens</h2>
+    <form method="post">
+        <label>Token:</label><input type="text" name="token" required>
+        <input type="submit" value="Guardar">
+    </form>
+    <ul>
+        {% for token in tokens %}
+            <li>{{ token.token }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('auth_routes.logout') }}">Cerrar sesión</a>
+</body>
+</html>

@@ -23,8 +23,42 @@ services:
     networks:
       - kuma-flask
 
+  app_flow:
+    build: ./app_flow
+    container_name: app_flow
+    ports:
+      - "5001:5000"
+    restart: always
+    volumes:
+      - ./app_flow:/app
+    environment:
+      DATABASE_URL: postgresql://admin:admin@postgres:5432/APPFLOW
+      SECRET_KEY: supersecretkey
+    depends_on:
+      - postgres
+    networks:
+      - kuma-flask
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: APPFLOW
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db_init:/docker-entrypoint-initdb.d
+    networks:
+      - kuma-flask
+    ports:
+      - "5432:5432"
+
 volumes:
   uptime-kuma-data:
+
+  pgdata:
 
 networks:
   kuma-flask:
