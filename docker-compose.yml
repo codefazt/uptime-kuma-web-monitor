@@ -29,8 +29,9 @@ services:
     ports:
       - "5001:5000"
     restart: always
+    working_dir: /app
     volumes:
-      - ./app_flow:/app
+      - ./app_flow:/app/app_flow
     environment:
       DATABASE_URL: postgresql://admin:admin@postgres:5432/APPFLOW
       SECRET_KEY: supersecretkey

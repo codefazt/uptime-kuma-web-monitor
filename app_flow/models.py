@@ -1,9 +1,7 @@
-from flask_sqlalchemy import SQLAlchemy
+from . import db
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy import func, Enum
 import uuid
-
-db = SQLAlchemy()
 
 class Usuario(db.Model):
     __tablename__ = 'usuarios'

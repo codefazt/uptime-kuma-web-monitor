@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, url_for, flash, session
-from app_flow.models import db, TokenMonitor, Usuario
+from .. import db
+from ..models import TokenMonitor, Usuario
 
 bp = Blueprint('token_routes', __name__)
 

@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, url_for, flash, session
-from app_flow.models import db, Usuario
+from .. import db
+from ..models import Usuario
 from werkzeug.security import generate_password_hash, check_password_hash
 
 bp = Blueprint('auth_routes', __name__)
@@ -29,7 +30,7 @@ def login():
         if user and check_password_hash(user.passwd, passwd):
             session['usuario_id'] = str(user.id)
             flash('Login exitoso')
-            return redirect(url_for('index'))
+            return redirect(url_for('token_routes.manage_tokens'))
         flash('Credenciales incorrectas')
     return render_template('login.html')
 
