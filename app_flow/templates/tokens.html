@@ -1,19 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Gestión de Tokens</title>
-</head>
-<body>
-    <h2>Tokens</h2>
-    <form method="post">
-        <label>Token:</label><input type="text" name="token" required>
-        <input type="submit" value="Guardar">
-    </form>
-    <ul>
-        {% for token in tokens %}
-            <li>{{ token.token }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{{ url_for('auth_routes.logout') }}">Cerrar sesión</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Gestión de Tokens - APP FLOW{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Gestión de Tokens</h2>
+
+        <h3>Agregar Nuevo Token</h3>
+        <form method="post" action="{{ url_for('token_routes.manage_tokens') }}">
+            <input type="text" name="host" placeholder="Ingrese el host (ej: https://google.com)" required>
+            <input type="text" name="token" placeholder="Ingrese el nuevo token" required>
+            <select name="status" required>
+                {% for status in token_status %}
+                    <option value="{{ status.value }}" {% if status.value == 'EN_PROGRESO' %}selected{% endif %}>{{ status.name.replace('_', ' ') | title }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Guardar">
+        </form>
+
+        <h3>Tokens Existentes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Host</th>
+                    <th>Token</th>
+                    <th>Estado</th>
+                    <th>Fecha de Creación</th>
+                    <th>Última Actualización</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for token in tokens %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ token.host or 'N/A' }}</td>
+                    <td>{{ token.token }}</td>
+                    <td><span class="status-{{ token.status.value | lower }}">{{ token.status.value if token.status else 'N/A' }}</span></td>
+                    <td>{{ token.create_date.strftime('%Y-%m-%d %H:%M:%S') if token.create_date else 'N/A' }}</td>
+                    <td>{{ token.update_date.strftime('%Y-%m-%d %H:%M:%S') if token.update_date else 'N/A' }}</td>
+                    <td class="actions">
+                        <a href="{{ url_for('token_routes.update_token', token_id=token.id) }}" class="btn-edit">Editar</a>
+                        <form action="{{ url_for('token_routes.delete_token', token_id=token.id) }}" method="post" onsubmit="return confirm('¿Está seguro de que desea eliminar este token?');">
+                            <button type="submit" class="btn-delete">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" style="text-align:center;">No hay tokens para mostrar.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

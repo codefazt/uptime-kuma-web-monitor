@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h2>Registro de Usuario</h2>
-    <form method="post">
-        <label>Usuario:</label><input type="text" name="usuario" required><br>
-        <label>Nombre Completo:</label><input type="text" name="nombre_completo" required><br>
-        <label>Contraseña:</label><input type="password" name="passwd" required><br>
-        <input type="submit" value="Registrar">
-    </form>
-    <a href="{{ url_for('auth_routes.login') }}">¿Ya tienes cuenta? Inicia sesión</a>
+    <div class="register-container">
+        <h2>Registro de Usuario</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="flash {{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="post">
+            <div class="form-group">
+                <label for="usuario">Usuario:</label><input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre_completo">Nombre Completo:</label><input type="text" id="nombre_completo" name="nombre_completo" required>
+            </div>
+            <div class="form-group">
+                <label for="passwd">Contraseña:</label><input type="password" id="passwd" name="passwd" required>
+            </div>
+            <input type="submit" value="Registrar">
+        </form>
+        <p class="form-link"><a href="{{ url_for('auth_routes.login') }}">¿Ya tienes cuenta? Inicia sesión</a></p>
+    </div>
 </body>
 </html>

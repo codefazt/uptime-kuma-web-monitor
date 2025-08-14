@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}APP FLOW{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="{{ url_for('token_routes.manage_tokens') }}">APP FLOW</a>
+            </div>
+            <nav>
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="{{ url_for('token_routes.manage_tokens') }}" class="{{ 'active' if 'manage_tokens' in request.endpoint }}">
+                            Gestión de Tokens
+                        </a>
+                    </li>
+                    <!-- Puedes agregar más links aquí -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <!-- Puedes agregar info del usuario aquí si quieres -->
+                <a href="{{ url_for('auth_routes.logout') }}" class="logout-btn">Cerrar Sesión</a>
+            </header>
+
+            <!-- Page Content -->
+            <main class="page-content">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+</body>
+</html>

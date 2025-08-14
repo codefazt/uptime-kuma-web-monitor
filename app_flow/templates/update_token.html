@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Actualizar Token - APP FLOW{% endblock %}
+
+{% block content %}
+    <div class="container update-form-container">
+        <h2>Actualizar Token</h2>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="host">Host:</label>
+                <input type="text" id="host" name="host" value="{{ token.host or '' }}" required>
+            </div>
+            <div class="form-group">
+                <label for="token">Valor del Token:</label>
+                <input type="text" id="token" name="token" value="{{ token.token }}" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Estado:</label>
+                <select id="status" name="status" required>
+                    {% for status in token_status %}
+                    <option value="{{ status.value }}" {% if token.status == status %}selected{% endif %}>
+                        {{ status.name.replace('_', ' ') | title }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-save">Guardar Cambios</button>
+                <a href="{{ url_for('token_routes.manage_tokens') }}" class="btn btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,7 +1,14 @@
 from . import db
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy import func, Enum
-import uuid
+import uuid, enum
+
+
+class TokenStatus(enum.Enum):
+    CAIDO = 'CAIDO'
+    EN_PROGRESO = 'EN_PROGRESO'
+    ACTIVO = 'ACTIVO'
+    TERMINADO = 'TERMINADO'
 
 class Usuario(db.Model):
     __tablename__ = 'usuarios'
@@ -18,8 +25,10 @@ class Usuario(db.Model):
 class TokenMonitor(db.Model):
     __tablename__ = 'token_monitor'
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    usuario_id = db.Column(UUID(as_uuid=True), db.ForeignKey('usuarios.id'))
+    usuario_id = db.Column(UUID(as_uuid=True), db.ForeignKey('usuarios.id'), nullable=False)
+    host = db.Column(db.String(255), nullable=True)
     token = db.Column(db.String(255), nullable=False)
+    status = db.Column(Enum(TokenStatus, name='token_status_enum', create_type=False), nullable=True, default=TokenStatus.EN_PROGRESO)
     create_date = db.Column(db.DateTime, server_default=func.now())
     update_date = db.Column(db.DateTime, onupdate=func.now())
     delete_date = db.Column(db.DateTime, nullable=True)

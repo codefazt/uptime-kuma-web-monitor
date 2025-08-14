@@ -11,10 +11,14 @@ CREATE TABLE IF NOT EXISTS usuarios (
     passwd VARCHAR(255) NOT NULL
 );
 
+CREATE TYPE token_status_enum AS ENUM ('CAIDO', 'EN_PROGRESO', 'ACTIVO', 'TERMINADO');
+
 CREATE TABLE IF NOT EXISTS token_monitor (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    usuario_id UUID REFERENCES usuarios(id),
+    usuario_id UUID NOT NULL REFERENCES usuarios(id),
+    host VARCHAR(255) NOT NULL,
     token VARCHAR(255) NOT NULL,
+    status token_status_enum NOT NULL DEFAULT 'EN_PROGRESO',
     create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     update_date TIMESTAMP,
     delete_date TIMESTAMP
